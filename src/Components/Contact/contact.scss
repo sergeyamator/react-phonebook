@@ -1,0 +1,29 @@
+.contact {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100px;
+
+  &__information {
+    width: 400px;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__text {
+    font-size: 20px;
+
+    &--name {
+      font-size: 26px;
+    }
+  }
+}
+
+.star {
+  border: 0;
+  background: 0;
+  font-size: 20px
+}

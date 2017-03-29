@@ -1,0 +1,15 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.control {
+  display: inline-block;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #8b8181;
+
+  &--active {
+    color: #000;
+  }
+}

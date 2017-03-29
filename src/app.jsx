@@ -4,6 +4,7 @@ import '../styles/index.scss';
 
 import Header from './Components/Header';
 import Contacts from './Components/Contacts';
+import Controls from './Components/Controls';
 
 function mapStateToProps(state) {
   return {
@@ -29,6 +30,7 @@ export default class App extends React.Component {
         <Header
           onCreate={this.props.onCreate}
         />
+        <Controls />
         <Contacts data={this.props.state} />
       </div>
     )
