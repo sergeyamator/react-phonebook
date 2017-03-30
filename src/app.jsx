@@ -19,7 +19,8 @@ function getVisibleContacts(contacts, filter) {
 function mapStateToProps(state) {
   return {
     visibleContacts: getVisibleContacts(state.contacts, state.filter),
-    viewStyle: state.viewStyle
+    viewStyle: state.viewStyle,
+    filter: state.filter
   }
 }
 
@@ -60,6 +61,8 @@ export default class App extends React.Component {
           onCreate={this.props.onCreate}
         />
         <Controls
+          activeFilter={this.props.filter}
+          activeViewStyle={this.props.viewStyle}
           changeFilter={this.props.changeFilter}
           changeViewStyle={this.props.changeViewStyle}
         />

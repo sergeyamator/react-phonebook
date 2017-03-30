@@ -7,7 +7,7 @@ export default props => {
       <div>
         <a
           href=""
-          className="control"
+          className={props.activeFilter === 'SHOW_ALL' ? "control control--active": "control"}
           onClick={(e) => {
             e.preventDefault();
             props.changeFilter('SHOW_ALL')
@@ -15,7 +15,7 @@ export default props => {
         >Все</a>
         <a
           href=""
-          className="control"
+          className={props.activeFilter === 'SHOW_FAVORITES' ? "control control--active": "control"}
           onClick={(e) => {
             e.preventDefault();
             props.changeFilter('SHOW_FAVORITES')
@@ -25,7 +25,7 @@ export default props => {
       <div>
         <a
           href=""
-          className="control"
+          className={props.activeViewStyle === 'LIST' ? "control control--active": "control"}
           onClick={e => {
             e.preventDefault();
             props.changeViewStyle('LIST');
@@ -35,7 +35,7 @@ export default props => {
         </a>
         <a
           href=""
-           className="control"
+          className={props.activeViewStyle === 'GRID' ? "control control--active": "control"}
           onClick={e => {
             e.preventDefault();
             props.changeViewStyle('GRID');
