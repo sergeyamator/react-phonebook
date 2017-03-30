@@ -1,9 +1,10 @@
 import React from 'react';
 import Contact from '../Contact';
+import './styles.scss';
 
 export default props => {
   return(
-    <div>
+    <div className={props.viewStyle === 'GRID' ? 'grid-containaer' : ''}>
       {
         props.data.map(item => {
           return <Contact

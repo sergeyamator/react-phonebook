@@ -23,8 +23,25 @@ export default props => {
         >Избранные</a>
       </div>
       <div>
-        <a href="" className="control">list</a>
-        <a href="" className="control">greed</a>
+        <a
+          href=""
+          className="control"
+          onClick={e => {
+            e.preventDefault();
+            props.changeViewStyle('LIST');
+          }}
+        >
+          list
+        </a>
+        <a
+          href=""
+           className="control"
+          onClick={e => {
+            e.preventDefault();
+            props.changeViewStyle('GRID');
+          }}
+        >
+          greed</a>
       </div>
     </div>
   );

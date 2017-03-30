@@ -18,7 +18,8 @@ function getVisibleContacts(contacts, filter) {
 
 function mapStateToProps(state) {
   return {
-    visibleContacts: getVisibleContacts(state.contacts, state.filter)
+    visibleContacts: getVisibleContacts(state.contacts, state.filter),
+    viewStyle: state.viewStyle
   }
 }
 
@@ -41,6 +42,12 @@ function mapDispatchToProps(dispatch) {
         type: 'SET_VISIBLE_FILTER',
         filter
       });
+    },
+    changeViewStyle: style => {
+      dispatch({
+        type: 'CHANGE_VIEW_STYLE',
+        style
+      })
     }
   }
 }
@@ -54,9 +61,11 @@ export default class App extends React.Component {
         />
         <Controls
           changeFilter={this.props.changeFilter}
+          changeViewStyle={this.props.changeViewStyle}
         />
         <Contacts
           data={this.props.visibleContacts}
+          viewStyle={this.props.viewStyle}
           toggleFavorites={this.props.toggleFavotires}
         />
       </div>
