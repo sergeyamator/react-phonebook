@@ -4,7 +4,7 @@ import Button from '../Button';
 import './contact.scss';
 
 export default props => {
-  return(
+  return (
     <div className="container contact">
       <div className="contact__information">
         <div className="contact__text contact__text--name">{props.name}</div>
@@ -12,9 +12,11 @@ export default props => {
         <div className="contact__text">{props.email}</div>
       </div>
       <div className="contact__controls">
-        <Button className="star">
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </Button>
+        <i
+          aria-hidden="true"
+          className={props.favorites ? "fa fa-star star" : "fa fa-star-o star"}
+          onClick={() => props.toggleFavorites(props.id)}
+        />
         <Button className="button">
           Написать
         </Button>

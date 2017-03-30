@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    text-align: center;
   }
 
   &__text {
@@ -25,5 +26,7 @@
 .star {
   border: 0;
   background: 0;
-  font-size: 20px
+  font-size: 20px;
+  color: #ff862e;
+  cursor: pointer;
 }

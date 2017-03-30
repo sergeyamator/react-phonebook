@@ -19,6 +19,12 @@ function mapDispatchToProps(dispatch) {
           type: 'ADD_CONTACT',
           payload
       });
+    },
+    toggleFavotires: id => {
+      dispatch({
+        type: 'TOGGLE_FAVORITES',
+        id
+      })
     }
   }
 }
@@ -31,7 +37,10 @@ export default class App extends React.Component {
           onCreate={this.props.onCreate}
         />
         <Controls />
-        <Contacts data={this.props.state} />
+        <Contacts
+          data={this.props.state}
+          toggleFavorites={this.props.toggleFavotires}
+        />
       </div>
     )
   }

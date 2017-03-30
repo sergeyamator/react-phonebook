@@ -8,9 +8,12 @@ export default props => {
         props.data.contacts.map(item => {
           return <Contact
             key={item.id}
+            id={item.id}
             name={item.name}
             email={item.email}
             phone={item.phone}
+            favorites={item.favorites}
+            toggleFavorites={props.toggleFavorites}
           />
         })
       }

@@ -7,9 +7,23 @@ export default (state = initialState, action) => {
       ...state,
       {
         ...action.payload,
-        id: id++
+        id: id++,
+        favorites: false
       }
     ]
+  }
+
+  if (action.type === 'TOGGLE_FAVORITES') {
+    return state.map(contact => {
+      if (contact.id === action.id) {
+        return {
+          ...contact,
+          favorites: !contact.favorites
+        }
+      }
+
+      return contact;
+    });
   }
   return state;
 }
