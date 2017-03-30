@@ -6,9 +6,19 @@ import Header from './Components/Header';
 import Contacts from './Components/Contacts';
 import Controls from './Components/Controls';
 
+function getVisibleContacts(contacts, filter) {
+  return contacts.filter(contact => {
+    if (filter === 'SHOW_FAVORITES') {
+      return contact.favorites;
+    }
+
+    return true;
+  })
+}
+
 function mapStateToProps(state) {
   return {
-    state
+    visibleContacts: getVisibleContacts(state.contacts, state.filter)
   }
 }
 
@@ -25,6 +35,12 @@ function mapDispatchToProps(dispatch) {
         type: 'TOGGLE_FAVORITES',
         id
       })
+    },
+    changeFilter: filter => {
+      dispatch({
+        type: 'SET_VISIBLE_FILTER',
+        filter
+      });
     }
   }
 }
@@ -36,9 +52,11 @@ export default class App extends React.Component {
         <Header
           onCreate={this.props.onCreate}
         />
-        <Controls />
+        <Controls
+          changeFilter={this.props.changeFilter}
+        />
         <Contacts
-          data={this.props.state}
+          data={this.props.visibleContacts}
           toggleFavorites={this.props.toggleFavotires}
         />
       </div>

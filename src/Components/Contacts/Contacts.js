@@ -5,7 +5,7 @@ export default props => {
   return(
     <div>
       {
-        props.data.contacts.map(item => {
+        props.data.map(item => {
           return <Contact
             key={item.id}
             id={item.id}

@@ -5,8 +5,22 @@ export default props => {
   return(
     <div className="controls container">
       <div>
-        <a href="" className="control">Все</a>
-        <a href="" className="control">Избранные</a>
+        <a
+          href=""
+          className="control"
+          onClick={(e) => {
+            e.preventDefault();
+            props.changeFilter('SHOW_ALL')
+          }}
+        >Все</a>
+        <a
+          href=""
+          className="control"
+          onClick={(e) => {
+            e.preventDefault();
+            props.changeFilter('SHOW_FAVORITES')
+          }}
+        >Избранные</a>
       </div>
       <div>
         <a href="" className="control">list</a>

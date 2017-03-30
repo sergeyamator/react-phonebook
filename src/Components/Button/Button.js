@@ -2,7 +2,6 @@ import React from 'react';
 import './styles.scss';
 
 export default props => {
-  console.log(props);
   return(
     <button
     className={props.className}
